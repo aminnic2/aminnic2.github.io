@@ -1,0 +1,108 @@
+<html>
+    <head>
+       <style>
+        div{
+    border-radius: 10px;
+    width: 200px;
+    margin-left: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: aliceblue;
+}
+body { background-image: url('https://autorai.nl/wp-content/uploads/2019/03/Lamborghini-Aventador_SVJ_Roadster-1.jpg');
+    z-index: -1;
+}
+       </style>
+    </head>
+    <body>  
+         
+        <center>
+        <div id="div0">
+            <input type="text" id="in1" placeholder="Enter you name"><br>
+            <input type="text" id="in2" placeholder="Enter a password"><br>
+            <span id="s1" style="color: red;"></span><br>
+            <button onclick="add()">Add user</button>
+        </div>
+
+      
+
+        <div id="div2">
+            <form action="page5.html" onsubmit="return login()">
+                <label for="in3">UserName:</label>
+                <input type="text" id="in3"><br>
+                <label for="in4">Password:</label>
+                <input type="password" id="in4"><br>
+                <span id="s2" style="color: red;"></span><br>
+                <input type="checkbox" onclick="showPass()"> Show password
+                <a href="login.html">Sign in</a>
+            </form>
+        </div>
+
+
+        <script>
+            var users = [{ username:'amine', password:'12345678' }]
+
+
+             function add(){
+
+                var userNameValue = document.getElementById('in1').value;
+                var passValue = document.getElementById('in2').value;
+
+                if(passValue.length < 8){
+
+                    document.getElementById('s1').innerHTML = 'password must contains 8 chars'
+                }else{
+                    var user = {};
+
+                    user.username = userNameValue;
+                    user.password= passValue;
+
+                    users.push(user);
+                    console.log(users)
+                }
+
+             }
+
+
+            
+            
+
+
+             function showPass(){
+
+                var passInput = document.getElementById('in4');
+
+                if(passInput.type == 'password'){
+                    passInput.type = 'text'
+                }else if(passInput.type == 'text'){
+                    passInput.type = 'password'
+                }
+             }
+
+             function login(){
+
+                var userValue = document.getElementById('in3').value;
+                var passValue = document.getElementById('in4').value;
+
+                if(userValue == ''){
+                    document.getElementById('s2').innerHTML = 'user name must be filed out';
+                    return false;
+                }
+                else if(passValue == ''){
+                    document.getElementById('s2').innerHTML = 'password name must be filed out'
+                    return false;
+                }
+
+                for(var i=0; i<users.length;i++){
+
+                    if(userValue == users[i].username && passValue == users[i].password){
+                        return true;
+                    }
+                }
+                document.getElementById('s2').innerHTML = 'username and password do not match';
+                        return false;
+             }
+
+        </script>
+    </body></center>
+</html>

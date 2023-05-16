@@ -1,0 +1,47 @@
+form {
+    position: relative;
+    border: 3px solid #f1f1f1;
+    margin-top:100px;
+    width: 400px;
+    height: 400px;
+   left: 24%;
+   border-radius: 10px;
+   background-color: #f1f1f1;
+   margin-left: 150px;
+ 
+    
+  }
+  body{
+background-image: url('https://autorai.nl/wp-content/uploads/2019/03/Lamborghini-Aventador_SVJ_Roadster-1.jpg');
+  }
+  
+  input[type=text], input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: ;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+  }
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  span.pass {
+    float: right;
+    
+  }
+  
+  
